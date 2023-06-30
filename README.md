@@ -5,7 +5,7 @@ This microservice is built with MySQL as its backend database. This current vers
 
 The connection string for the database is specified in the `application.properties` file and looks something like this:
 ```
-spring.datasource.url=jdbc:mysql://localhost:3306/database
+spring.datasource.url=jdbc:mysql://localhost:3306/your-own-database
 ```
 
 The username and password that are used to access the database are also specified in the `application.properties` file and their keys are:
@@ -33,11 +33,14 @@ docker pull mysql
 docker run -d --name mysql-server -p 3306:3306 -e MYSQL_ROOT_PASSWORD=<INPUT YOUR NEW OWN PASSWORD FOR ROOT> mysql
 ```
 
-Currently, you will need to create own username and password to be used in `application.properties`:
+Currently, you will need to create the database `your-own-database` manually. Also, you will need to create own username and password to be used in `application.properties`:
 
 ```t
 # Run the following to open mysql terminal: (You will use the password specified in <INPUT YOUR NEW OWN PASSWORD FOR ROOT>)
 mysql -u root -p
+
+# Create the database:
+CREATE DATABASE IF NOT EXISTS your-own-database;
 
 # then, create username and give the user privileges:
 CREATE USER 'admin'@'%' IDENTIFIED BY '<SET YOUR NEW OWN PASSWORD>';
