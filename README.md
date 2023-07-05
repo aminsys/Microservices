@@ -1,4 +1,4 @@
-# Microservices - a demo project written in Sping Boot
+# Microservices - a demo project written in Sping Boot and MySQL
 The aim of this project is to gain a fundamental understanding of how microservices are developed, tested and maintained.
 
 This microservice is built with MySQL as its backend database. This current version of the microservice works with one table (called student) ONLY.
